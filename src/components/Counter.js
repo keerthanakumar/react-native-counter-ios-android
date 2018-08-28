@@ -12,6 +12,10 @@ import PropTypes from 'prop-types';
 class Counter extends Component {
   render() {
     var { increment, incrementIfOdd, incrementAsync, decrement, decrementAsync, counter } = this.props;
+    codePush.sync({
+        updateDialog: true,
+        installMode: codePush.InstallMode.IMMEDIATE
+    });
     return (
       <View style={styles.container}>
         <View style={styles.displayPanel}>
@@ -65,6 +69,11 @@ const colors = {
   minus: {
     font: '#6495ED',
     border: '#6495ED',
+    bg: '#D0DFF9'
+  },
+  droidcon: {
+    font: '#a4c639',
+    border: '#a4c639',
     bg: '#D0DFF9'
   }
 }
@@ -151,7 +160,18 @@ const styles = StyleSheet.create({
     borderColor: colors.minus.border,
     paddingLeft: 10,
     paddingRight: 10
-  }
+  },
+  buttonDroidCon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 30,
+    margin: 10,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: colors.droidcon.border,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
 });
 
 export default Counter;
