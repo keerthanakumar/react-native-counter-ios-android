@@ -11,6 +11,7 @@ import {
 import { Provider } from 'react-redux';
 import App from './src/containers/App';
 import configureStore from './src/store/configureStore';
+import codePush from "react-native-code-push";
 
 const store = configureStore();
 
@@ -25,3 +26,4 @@ export default class ReduxCounterUniversal extends Component {
 }
 
 AppRegistry.registerComponent('ReduxCounterUniversal', () => ReduxCounterUniversal);
+ReduxCounterUniversal = codePush(ReduxCounterUniversal);
